@@ -1,0 +1,1 @@
+GFPGAN visibility is used when we've face in ours image it GFPGAN visibility makes sure to add more and more information in the face

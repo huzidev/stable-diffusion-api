@@ -1,0 +1,18 @@
+first of all creating caption of images using blib captioning from utilities then BLIP Captioning
+paste the folder name where images are present then prefix to add blip add the name of the person just
+ex: Thommas shelby
+then caption images
+
+now select the custom model on Dreambooth and Dreambooth-lora on which images have to be trained IF models base is SD 2 or 2.1 then select v2 and v_prameterization checkbox
+now folders create three diff folders 1:image, 2:log 3:model in image folder create a folder with training steps
+100_tom in which all the images with generated captioms
+now copy the folder with the name image NOT 100_tom just folder (image) copy as path paste at image folder tab in dreambooth-lora->folders->image folder
+and copy model folder path and paste in output folder and log folder path in logging folder
+now training parameters their is JSON file with all the best training settings load that file with Configuration file at top then load
+make sure to check the folders name again as the folder path may be changed after loadign the settings
+Train batch size maybe 2 which takes too much vram select it to be 1
+
+while training lora if total images are less than 15 than do this
+suppose we've 10 images to train
+1500/10 = 150 now the folder name must've to be 150_test
+minimum training steps must be 100 and this method will only be followed when we've less than 15 images

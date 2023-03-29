@@ -1,0 +1,33 @@
+COLOR NET FOR SAME POSES BUT DIFF OUTCOMES
+Canny: Mostly for High detailed image procession OR for Anime
+Depth: have less details best for creting light from diff angles and for changing backgrounds
+HED: creates blur outlines around special edges of image result is much similar as of canny
+MLSD: mostly for straight lines EX: buildings
+Normal: for mostly gaming charchetrs: EX: change iron man into transformer
+OpenPose: for outspread pose (no lapping of hands, arm) and works best when person have tight clothing for visibility of arms and legs
+Scribble: converts sketch like scribble into any image, anime, painting
+Fake Scribble: takes real image convert it into (sketch/scribble) then into image, anime but result will be bit diff beause it first converts the image into scribble
+
+
+FOR diff images merger 
+put the image which position we wanted in controlnet-model-0
+and the style or type in the other ones
+like
+image of tom cruise in controlnet-model-0 select any model
+and image of an anime character in the other ones and select clip_vision and t2i_adapter_style for model
+now the image of tom cruise will be in anime form
+NOTE we can do this without prompt and if adding prompt then prompt must NOT be too large
+slect guidance scale start for result
+EX: for more of a anime image we can increase the guidance scale where the image of tom cruise is present like guidance scale start to 0.30 now the original image of
+tom cruise will be 30% less becuase guidance scale start is 0.30
+if we want less of anime then we can increase guidance start of the model where anime image is present
+guidance start means start using images after skipping that much steps
+means if guidance start scale is 0.50 then stable-diffusion will start looking image after skipping 50% of image
+
+For changing backgrounds
+select dept_leres and depth model there we can select the remove background% and then we can add new backgroudn in the prompt
+OR select the image wanted to add in background in inpaint then draw the paint area for person to be add exact height now in controlNet model-0 add the image with that person 
+and select dept_leres and depth model and in controlNet model-1 add the same image but set canny and canny model for more information of the character
+put diff weight settings on both controlNet model for diff results and diff denoising strength in inpaint
+
+guess mode in controlNet is perfect when we uses sketch colors and inpaint with very few prompts

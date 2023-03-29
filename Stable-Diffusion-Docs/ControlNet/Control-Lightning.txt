@@ -1,0 +1,2 @@
+put the image in controlNet with depth_leres/depth and depth model and image with light source in img2img denose strength should be 0.90 to 1
+for lightning from specific area click select light image put it in img2img then click edit and crop the image to specific part
