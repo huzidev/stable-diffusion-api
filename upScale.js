@@ -23,7 +23,6 @@ module.exports.upScale = function upScale(respImage, fileName) {
       const upScaleResp = await axios(upScalerConfig);
       const { image } = upScaleResp.data;
       const bufferUpScale = Buffer.from(image, "base64");
-      // create upScale folder to save the file
       const upScalePath = path.join("upScale", `${fileName}.png`);
       fs.writeFileSync(upScalePath, bufferUpScale);
     } catch (e) {

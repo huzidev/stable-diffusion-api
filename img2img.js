@@ -2,10 +2,10 @@ const axios = require("axios");
 const path = require("path");
 const fs = require("fs");
 
-module.exports.newTest = function test(respImage, fileName) {
+module.exports.imgToimg = function imgToimg(respImage, fileName) {
     var imgToimgData = JSON.stringify({
         "init_images": respImage,
-        "denoising_strength": 0.35,
+        "denoising_strength": 0.75,
     });
     const imgToimgConfig = {
         method: 'post',
