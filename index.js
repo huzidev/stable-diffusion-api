@@ -44,7 +44,7 @@ var data = JSON.stringify({
 
 const ckptModel = ckpt.arrModel;
 
-let ckptSD = ckptModel[1];
+let ckptSD = ckptModel[2];
 let folder = ckptSD === ckptModel[0] ? "protogen" : ckptSD === ckptModel[1] ? "f222" : ckptSD === ckptModel[2] ? "midjourney" : "anime";
 
 const config = {
@@ -95,7 +95,7 @@ async function main() {
       fs.writeFileSync(textFile, util.inspect(newObj, false, 2, false));
     }
     img.imgToimg(respImage, fileName);
-    upScale.upScale(respImage, fileName);
+    // upScale.upScale(respImage, fileName);
   } catch (e) {
     console.log('e', e);
   }

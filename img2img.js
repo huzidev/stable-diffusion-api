@@ -19,7 +19,9 @@ module.exports.imgToimg = function imgToimg(respImage, fileName) {
         try {
             console.log("Generating img2img");
             const imgResp = await axios(imgToimgConfig);
-            const { images } = imgResp.data;
+            const { images, parameters } = imgResp.data;
+            let obj = JSON.parse(parameters);
+            let arrofKey = ["prompt", "negative_prompt", "seed", "height", "width", "sampler_name", "cfg_scale", "steps", "restore_faces"];
             for (const imgToImg of images) {
                 const imgBuffer = Buffer.from(imgToImg, "base64");
                 const imgToImgPath = path.join("img2img", `${fileName}.png`);
