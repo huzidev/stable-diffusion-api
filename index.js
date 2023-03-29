@@ -35,7 +35,7 @@ var data = JSON.stringify({
   steps,
   negative_prompt,
   cfg_scale,
-  "sampler_index": "Euler",
+  "sampler_name": "Heun",
   "batch_size": 1,
   "width": 512,
   "height": 512,
@@ -101,4 +101,5 @@ async function main() {
   }
 }
 
+module.exports.ckptSD = ckptSD
 main();
