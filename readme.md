@@ -10,4 +10,5 @@ This Node scirpt will runs the stable diffusion as API
 4: Taking parameters as Arguments the npm command EX: npm start add -- --prompt="anime character" --steps=20 --negative_prompt="disfigured" --cfg_scale=10.\
 4: Taking parameters as input EX: npm start > prompt:anime character > steps: 20.
 
+\
 OR simply manipulate the script accordingly by going to http://127.0.0.1:7860/docs where multiples API reference are present
