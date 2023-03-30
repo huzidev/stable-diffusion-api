@@ -1,0 +1,11 @@
+{
+  prompt: 'anime character holding a sword',
+  negative_prompt: 'disfigured, bad anatomy',
+  seed: 347092775,
+  width: 512,
+  height: 512,
+  sampler_name: 'Heun',
+  cfg_scale: 8,
+  steps: 25,
+  restore_faces: false
+}
