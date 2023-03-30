@@ -6,7 +6,7 @@ const util = require('util');
 const img = require("./img2img");
 const upScale = require("./upScale");
 const arr = require("./arrayVar");
-const yargs = require('yargs');
+const yargs = require("yargs");
 const method = require("./config");
 
 // For taking input after npm start
