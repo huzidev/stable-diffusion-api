@@ -1,3 +1,4 @@
+// const get = require('prompt-sync')();
 const yargs = require("yargs");
 const arr = require("./arrayVar");
 
@@ -46,7 +47,7 @@ const config = {
 
 const ckptModel = arr.arrModel;
 
-let ckptSD = ckptModel[2];
+let ckptSD = ckptModel[3];
 let folder = ckptSD === ckptModel[0] ? "protogen" : ckptSD === ckptModel[1] ? "f222" : ckptSD === ckptModel[2] ? "midjourney" : "anime";
 
 const ckptConfig = {

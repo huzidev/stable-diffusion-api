@@ -1,14 +1,13 @@
 const axios = require('axios');
 const path = require('path');
 const fs = require('fs');
-const get = require('prompt-sync')();
 const util = require('util');
-const img = require("./img2img");
-const upScale = require("./upScale");
 const arr = require("./arrayVar");
 const method = require("./configTxt");
+const img = require("./img2img");
+const upScale = require("./upScale");
 
-const { config, ckptConfig, ckptSD, folder } = method.config;
+const { ckptConfig, config, ckptSD, folder } = method;
 
 const fileName = Date.now();
 async function main() {

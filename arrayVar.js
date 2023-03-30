@@ -3,7 +3,7 @@ let arrModel = [
     "f222.safetensors [f300684443]",
     "mdjrny-v4.ckpt [5d5ad06cc2]",
     "EmisAnime.ckpt [39ee30561f]"
-]
+];
 
 let keyOfImg = ["prompt", "denoising_strength", "seed", "height", "width", "sampler_name", "cfg_scale", "steps", "restore_faces"];
 
