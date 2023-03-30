@@ -7,6 +7,7 @@ const img = require("./img2img");
 const upScale = require("./upScale");
 const arr = require("./arrayVar");
 const yargs = require('yargs');
+const method = require("./config");
 
 // For taking input after npm start
 //   let obj = {
@@ -47,23 +48,7 @@ const ckptModel = arr.arrModel;
 let ckptSD = ckptModel[2];
 let folder = ckptSD === ckptModel[0] ? "protogen" : ckptSD === ckptModel[1] ? "f222" : ckptSD === ckptModel[2] ? "midjourney" : "anime";
 
-const config = {
-  method: 'post',
-  url: 'http://127.0.0.1:7860/sdapi/v1/txt2img',
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  data: data
-};
 
-const ckptConfig = {
-  method: 'post',
-  url: 'http://127.0.0.1:7860/sdapi/v1/options',
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  data: JSON.stringify({ "sd_model_checkpoint": ckptSD })
-};
 
 const fileName = Date.now();
 async function main() {
@@ -95,8 +80,8 @@ async function main() {
       // writeFileSync could not take object directly
       fs.writeFileSync(textFile, util.inspect(newObj, false, 2, false));
     }
-    img.imgToimg(respImage, fileName);
-    // upScale.upScale(respImage, fileName);
+    // img.imgToimg(respImage, fileName);
+    upScale.upScale(respImage, fileName);
   } catch (e) {
     console.log('e', e);
   }
