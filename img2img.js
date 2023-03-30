@@ -29,11 +29,11 @@ module.exports.imgToimg = function imgToimg(respImage, fileName) {
             console.log("Generating img2img");
             const imgResp = await axios(imgToimgConfig);
             const { images, parameters } = imgResp.data;
-            const arrOfImg = ckpt.
+            const arrOfImg = arr.keyOfImg;
             let obj = parameters;
             let newObj = {};
             for (const key in obj) {
-                arrofKey.forEach(element => {
+                arrOfImg.forEach(element => {
                     if (key === element) {
                         newObj[key] = obj[key]  
                     }

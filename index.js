@@ -5,7 +5,7 @@ const get = require('prompt-sync')();
 const util = require('util');
 const img = require("./img2img");
 const upScale = require("./upScale");
-const ckpt = require("./arrayVar");
+const arr = require("./arrayVar");
 const yargs = require('yargs');
 
 // For taking input after npm start
@@ -42,7 +42,7 @@ var data = JSON.stringify({
   "seed": -1,
 });
 
-const ckptModel = ckpt.arrModel;
+const ckptModel = arr.arrModel;
 
 let ckptSD = ckptModel[2];
 let folder = ckptSD === ckptModel[0] ? "protogen" : ckptSD === ckptModel[1] ? "f222" : ckptSD === ckptModel[2] ? "midjourney" : "anime";
@@ -74,7 +74,7 @@ async function main() {
     const { images, info } = resp.data;
     respImage = images;
     let obj = JSON.parse(info);
-    const arrOFTxt = ckpt.keyOfTxt;
+    const arrOFTxt = arr.keyOfTxt;
     let newObj = {};
     for (let key in obj) {
       arrOFTxt.forEach(value => {
