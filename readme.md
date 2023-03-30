@@ -8,10 +8,18 @@ Run npm i command to install all the available dependencies
 
 ## Steps
 
-1: Enable set COMMANDLINE_ARGS as set COMMANDLINE_ARGS=--api at webui-user.bat file in root folder of Stable diffusion.\
-2: Run Stable diffusion webui-user.bat file.\
-3: Now run the node script accordingly by taking the parameters as input or as arguments.\
-4: Taking parameters as arguments by npm command EX: npm start add -- --prompt="anime character" --steps=20 --negative_prompt="disfigured" --cfg_scale=10.\
+1: Enable set COMMANDLINE_ARGS as set COMMANDLINE_ARGS=--api at webui-user.bat file in root folder of Stable diffusion.
+
+
+2: Run Stable diffusion webui-user.bat file.
+
+
+3: Now run the node script accordingly by taking the parameters as input or as arguments.
+
+
+4: Taking parameters as arguments by npm command EX: npm start add -- --prompt="anime character" --steps=20 --negative_prompt="disfigured" --cfg_scale=10.
+
+
 4: Taking parameters as input EX: npm start > prompt:anime character > steps: 20.
 
 \
