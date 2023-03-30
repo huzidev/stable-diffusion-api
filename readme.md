@@ -23,4 +23,4 @@ Run npm i command to install all the available dependencies
 4: Taking parameters as input EX: npm start > prompt:anime character > steps: 20.
 
 \
-OR simply manipulate the script accordingly by going to http://127.0.0.1:7860/docs where multiples API reference are present
+OR simply manipulate the script accordingly by going to http://127.0.0.1:7860/docs where multiples API references are present.
