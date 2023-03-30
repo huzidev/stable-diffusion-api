@@ -3,6 +3,7 @@ const path = require("path");
 const fs = require("fs");
 const util = require('util');
 const ckptSD = require("./index");
+const arr = require("./arrayVar")
 
 module.exports.imgToimg = function imgToimg(respImage, fileName) {
     var imgToimgData = JSON.stringify({
@@ -28,7 +29,7 @@ module.exports.imgToimg = function imgToimg(respImage, fileName) {
             console.log("Generating img2img");
             const imgResp = await axios(imgToimgConfig);
             const { images, parameters } = imgResp.data;
-            let arrofKey = ["prompt", "denoising_strength", "seed", "height", "width", "sampler_name", "cfg_scale", "steps", "restore_faces"];
+            const arrOfImg = ckpt.
             let obj = parameters;
             let newObj = {};
             for (const key in obj) {

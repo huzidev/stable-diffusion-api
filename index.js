@@ -74,10 +74,10 @@ async function main() {
     const { images, info } = resp.data;
     respImage = images;
     let obj = JSON.parse(info);
-    let arrofKey = ["prompt", "negative_prompt", "seed", "height", "width", "sampler_name", "cfg_scale", "steps", "restore_faces"];
+    const arrOFTxt = ckpt.keyOfTxt;
     let newObj = {};
     for (let key in obj) {
-      arrofKey.forEach(value => {
+      arrOFTxt.forEach(value => {
         if (key === value) {
           newObj[key] = obj[key]
         }
