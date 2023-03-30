@@ -6,34 +6,9 @@ const util = require('util');
 const img = require("./img2img");
 const upScale = require("./upScale");
 const arr = require("./arrayVar");
-const method = require("./config");
+const method = require("./configTxt");
 
-// For taking input after npm start
-//   let obj = {
-//     prompt: "",
-//     steps: 0
-//   };
-
-// for (const val in obj) {
-//   obj[val] = get(`${val} : `)
-// }
-
-// const { prompt, steps } = obj;
-
-// input as argument (npm start : npm start "prompt" steps)
-// const prompt = process.argv[2];
-// const steps = process.argv[3];
-
-// input as argument (npm start add -- --prompt="prompt" --steps=steps)
-
-
-const ckptModel = arr.arrModel;
-
-let ckptSD = ckptModel[2];
-let folder = ckptSD === ckptModel[0] ? "protogen" : ckptSD === ckptModel[1] ? "f222" : ckptSD === ckptModel[2] ? "midjourney" : "anime";
-
-const config = method.config
-const ckptConfig = method.ckptConfig
+const { config, ckptConfig, ckptSD, folder } = method.config;
 
 const fileName = Date.now();
 async function main() {

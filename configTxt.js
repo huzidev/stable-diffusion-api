@@ -1,6 +1,23 @@
 const yargs = require("yargs");
 const arr = require("./arrayVar");
 
+// For taking input after npm start
+//   let obj = {
+//     prompt: "",
+//     steps: 0
+//   };
+
+// for (const val in obj) {
+//   obj[val] = get(`${val} : `)
+// }
+
+// const { prompt, steps } = obj;
+
+// input as argument (npm start : npm start "prompt" steps)
+// const prompt = process.argv[2];
+// const steps = process.argv[3];
+
+// input as argument (npm start add -- --prompt="prompt" --steps=steps)
 let prompt = yargs.argv.prompt;
 let steps = yargs.argv.steps;
 let negative_prompt = yargs.argv.neg;
