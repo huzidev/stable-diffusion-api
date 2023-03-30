@@ -39,8 +39,8 @@ async function main() {
       // writeFileSync could not take object directly
       fs.writeFileSync(textFile, util.inspect(newObj, false, 2, false));
     }
-    // img.imgToimg(respImage, fileName);
-    upScale.upScale(respImage, fileName);
+    img.imgToimg(respImage, fileName);
+    // upScale.upScale(respImage, fileName);
   } catch (e) {
     console.log('e', e);
   }

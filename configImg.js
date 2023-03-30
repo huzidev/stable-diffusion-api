@@ -1,4 +1,4 @@
-module.exports.imgToimg = function imgToimg(respImage, fileName) {
+module.exports.configImg = function configImg(respImage) {
     var imgToimgData = JSON.stringify({
         "init_images": respImage,
         "prompt": "Winter season",

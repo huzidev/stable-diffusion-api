@@ -4,11 +4,14 @@ const fs = require("fs");
 const util = require("util");
 const ckptSD = require("./index");
 const arr = require("./arrayVar")
-
+const config = require("./configImg");    
 
 const model = ckptSD.ckptSD;
 
-module.exports.imgToimg = async function imgToImg() {
+const { configImg, imgToimgConfig } = config;
+
+module.exports.imgToimg = async function imgToImg(respImage, fileName) {
+    configImg(respImage);
     try {
         console.log("Generating img2img");
         const imgResp = await axios(imgToimgConfig);
