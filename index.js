@@ -27,15 +27,19 @@ const method = require("./config");
 // input as argument (npm start add -- --prompt="prompt" --steps=steps)
 
 
+const ckptModel = arr.arrModel;
+
+let ckptSD = ckptModel[2];
+let folder = ckptSD === ckptModel[0] ? "protogen" : ckptSD === ckptModel[1] ? "f222" : ckptSD === ckptModel[2] ? "midjourney" : "anime";
 
 const config = method.config
-// const ckptConfig = method.ckptConfig
+const ckptConfig = method.ckptConfig
 
 const fileName = Date.now();
 async function main() {
   try {
     console.log("Generating...");
-    // await axios(ckptConfig);
+    await axios(ckptConfig);
     const resp = await axios(config);
     const { images, info } = resp.data;
     respImage = images;
@@ -50,13 +54,13 @@ async function main() {
       });
       newObj = {
         ...newObj,
-        // Model: ckptSD
+        Model: ckptSD
       }
     }
     for (const image of images) {
       const buffer = Buffer.from(image, "base64");
-      const imagePath = path.join(`images/midjourney`, `${fileName}.png`);
-      const textFile = path.join(`images/midjourney`, `${fileName}.txt`);
+      const imagePath = path.join(`images/${folder}`, `${fileName}.png`);
+      const textFile = path.join(`images/${folder}`, `${fileName}.txt`);
       fs.writeFileSync(imagePath, buffer);
       // writeFileSync could not take object directly
       fs.writeFileSync(textFile, util.inspect(newObj, false, 2, false));
@@ -68,5 +72,5 @@ async function main() {
   }
 }
 
-// module.exports.ckptSD = ckptSD
+module.exports.ckptSD = ckptSD
 main();

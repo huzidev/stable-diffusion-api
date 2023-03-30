@@ -1,4 +1,6 @@
 const yargs = require("yargs");
+const arr = require("./arrayVar");
+
 let prompt = yargs.argv.prompt;
 let steps = yargs.argv.steps;
 let negative_prompt = yargs.argv.neg;
@@ -25,16 +27,23 @@ const config = {
     data: data
 };
 
-// const ckptConfig = {
-//     method: 'post',
-//     url: 'http://127.0.0.1:7860/sdapi/v1/options',
-//     headers: {
-//         'Content-Type': 'application/json'
-//     },
-//     data: JSON.stringify({ "sd_model_checkpoint": ckptSD })
-// };
+const ckptModel = arr.arrModel;
+
+let ckptSD = ckptModel[2];
+let folder = ckptSD === ckptModel[0] ? "protogen" : ckptSD === ckptModel[1] ? "f222" : ckptSD === ckptModel[2] ? "midjourney" : "anime";
+
+const ckptConfig = {
+    method: 'post',
+    url: 'http://127.0.0.1:7860/sdapi/v1/options',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    data: JSON.stringify({ "sd_model_checkpoint": ckptSD })
+};
 
 module.exports = {
     config,
-    // ckptConfig
+    ckptConfig,
+    ckptSD,
+    folder
 }
