@@ -1,7 +1,7 @@
 const axios = require("axios");
 const path = require("path");
 const fs = require("fs");
-const util = require('util');
+const util = require("util");
 const ckptSD = require("./index");
 const arr = require("./arrayVar")
 
