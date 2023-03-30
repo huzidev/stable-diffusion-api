@@ -5,7 +5,7 @@ const get = require('prompt-sync')();
 const util = require('util');
 const img = require("./img2img");
 const upScale = require("./upScale");
-const ckpt = require("./models");
+const ckpt = require("./arrayVar");
 const yargs = require('yargs');
 
 // For taking input after npm start
