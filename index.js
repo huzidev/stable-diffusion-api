@@ -92,6 +92,7 @@ async function main() {
       const imagePath = path.join(`images/${folder}`, `${fileName}.png`);
       const textFile = path.join(`images/${folder}`, `${fileName}.txt`);
       fs.writeFileSync(imagePath, buffer);
+      // writeFileSync could not take object directly
       fs.writeFileSync(textFile, util.inspect(newObj, false, 2, false));
     }
     img.imgToimg(respImage, fileName);

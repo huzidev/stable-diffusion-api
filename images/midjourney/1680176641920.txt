@@ -1,0 +1,12 @@
+{
+  prompt: 'anime character holding a sword',
+  Model: 'mdjrny-v4.ckpt [5d5ad06cc2]',
+  negative_prompt: 'disfigured, bad anatomy',
+  seed: 3409015077,
+  width: 512,
+  height: 512,
+  sampler_name: 'Heun',
+  cfg_scale: 8,
+  steps: 10,
+  restore_faces: false
+}

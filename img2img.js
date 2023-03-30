@@ -20,6 +20,9 @@ module.exports.imgToimg = function imgToimg(respImage, fileName) {
         },
         data: imgToimgData
     };
+
+    const model = ckptSD.ckptSD;
+
     async function imgToImg() {
         try {
             console.log("Generating img2img");
@@ -36,7 +39,7 @@ module.exports.imgToimg = function imgToimg(respImage, fileName) {
                 });
                 newObj = {
                     ...newObj,
-                    Model: ckptSD
+                    Model: model
                 }
             }
             for (const imgToImg of images) {
