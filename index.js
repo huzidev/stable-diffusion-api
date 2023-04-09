@@ -1,13 +1,14 @@
 const axios = require('axios');
 const path = require('path');
 const fs = require('fs');
+const get = require('prompt-sync')();
 const util = require('util');
-const arr = require("./arrayVar");
-const method = require("./configTxt");
 const img = require("./img2img");
 const upScale = require("./upScale");
+const arr = require("./arrayVar");
+const method = require("./configTxt");
 
-const { ckptConfig, config, ckptSD, folder } = method;
+const { config, ckptConfig, ckptSD, folder } = method;
 
 const fileName = Date.now();
 async function main() {
@@ -39,8 +40,8 @@ async function main() {
       // writeFileSync could not take object directly
       fs.writeFileSync(textFile, util.inspect(newObj, false, 2, false));
     }
-    img.imgToimg(respImage, fileName);
-    // upScale.upScale(respImage, fileName);
+    // img.imgToimg(respImage, fileName);
+    upScale.upScale(respImage, fileName);
   } catch (e) {
     console.log('e', e);
   }

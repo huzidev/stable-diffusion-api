@@ -1,2 +1,0 @@
-best result with low cfg scale and greater steps
-if gets blue noise in image do reduce cfg scale

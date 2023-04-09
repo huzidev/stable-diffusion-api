@@ -1,3 +1,0 @@
-ORIGINAL if we wanted the colors of paint areas to be same
-LATENT NOISE if color have to be diff on each iterations
-FILL for using other colors from images parts
